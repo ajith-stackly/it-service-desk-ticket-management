@@ -1,0 +1,348 @@
+{
+  "users": [
+    {
+      "id": "u1",
+      "fullName": "Alice Admin",
+      "email": "admin@itsm.com",
+      "password": "admin123",
+      "phone": "+1-202-555-0100",
+      "department": "IT Administration",
+      "role": "Admin",
+      "status": "Active",
+      "createdDate": "2026-01-05T09:00:00.000Z"
+    },
+    {
+      "id": "u2",
+      "fullName": "Raj Kumar",
+      "email": "agent1@itsm.com",
+      "password": "agent123",
+      "phone": "+1-202-555-0111",
+      "department": "IT Support",
+      "role": "Support Agent",
+      "status": "Active",
+      "createdDate": "2026-01-06T09:00:00.000Z"
+    },
+    {
+      "id": "u3",
+      "fullName": "Priya Sharma",
+      "email": "agent2@itsm.com",
+      "password": "agent123",
+      "phone": "+1-202-555-0112",
+      "department": "Network Operations",
+      "role": "Support Agent",
+      "status": "Active",
+      "createdDate": "2026-01-06T09:15:00.000Z"
+    },
+    {
+      "id": "u4",
+      "fullName": "John Employee",
+      "email": "employee1@itsm.com",
+      "password": "employee123",
+      "phone": "+1-202-555-0121",
+      "department": "Sales",
+      "role": "Employee",
+      "status": "Active",
+      "createdDate": "2026-01-07T09:00:00.000Z"
+    },
+    {
+      "id": "u5",
+      "fullName": "Sarah Williams",
+      "email": "employee2@itsm.com",
+      "password": "employee123",
+      "phone": "+1-202-555-0122",
+      "department": "Marketing",
+      "role": "Employee",
+      "status": "Active",
+      "createdDate": "2026-01-07T09:30:00.000Z"
+    },
+    {
+      "id": "u6",
+      "fullName": "Mike Torres",
+      "email": "mike.torres@itsm.com",
+      "password": "employee123",
+      "phone": "+1-202-555-0123",
+      "department": "Finance",
+      "role": "Employee",
+      "status": "Inactive",
+      "createdDate": "2026-01-08T09:30:00.000Z"
+    }
+  ],
+  "tickets": [
+    {
+      "id": "TKT-1001",
+      "subject": "Unable to connect to office Wi-Fi",
+      "description": "My laptop keeps disconnecting from the office Wi-Fi network every few minutes. This started happening yesterday afternoon.",
+      "createdBy": "u4",
+      "createdByName": "John Employee",
+      "assignedAgent": "u2",
+      "assignedAgentName": "Raj Kumar",
+      "category": "Network",
+      "priority": "High",
+      "status": "Closed",
+      "contactMethod": "Email",
+      "createdDate": "2026-08-20T10:30:00.000Z",
+      "updatedDate": "2026-08-20T13:30:00.000Z",
+      "dueDate": "2026-08-21T18:00:00.000Z",
+      "resolution": "Network adapter was reset and the device was reconnected to the corporate Wi-Fi.",
+      "resolutionNotes": "Advised the user to update their Wi-Fi driver as a preventive measure.",
+      "resolutionDate": "2026-08-20T13:00:00.000Z",
+      "activity": [
+        {
+          "timestamp": "2026-08-20T10:30:00.000Z",
+          "message": "Ticket created by John Employee"
+        },
+        {
+          "timestamp": "2026-08-20T10:45:00.000Z",
+          "message": "Ticket assigned to Raj Kumar by Alice Admin"
+        },
+        {
+          "timestamp": "2026-08-20T11:10:00.000Z",
+          "message": "Status changed to In Progress by Raj Kumar"
+        },
+        {
+          "timestamp": "2026-08-20T12:15:00.000Z",
+          "message": "Comment added by Raj Kumar"
+        },
+        {
+          "timestamp": "2026-08-20T13:00:00.000Z",
+          "message": "Resolution added and ticket resolved by Raj Kumar"
+        },
+        {
+          "timestamp": "2026-08-20T13:30:00.000Z",
+          "message": "Status changed to Closed by Raj Kumar"
+        }
+      ]
+    },
+    {
+      "id": "TKT-1002",
+      "subject": "Outlook is crashing on startup",
+      "description": "Every time I try to open Outlook it crashes immediately with an error dialog. I have already restarted my computer twice.",
+      "createdBy": "u5",
+      "createdByName": "Sarah Williams",
+      "assignedAgent": "u3",
+      "assignedAgentName": "Priya Sharma",
+      "category": "Software",
+      "priority": "Medium",
+      "status": "In Progress",
+      "contactMethod": "Chat",
+      "createdDate": "2026-09-05T08:15:00.000Z",
+      "updatedDate": "2026-09-06T09:00:00.000Z",
+      "dueDate": "2026-09-08T18:00:00.000Z",
+      "resolution": null,
+      "resolutionNotes": null,
+      "resolutionDate": null,
+      "activity": [
+        {
+          "timestamp": "2026-09-05T08:15:00.000Z",
+          "message": "Ticket created by Sarah Williams"
+        },
+        {
+          "timestamp": "2026-09-05T08:40:00.000Z",
+          "message": "Ticket assigned to Priya Sharma by Alice Admin"
+        },
+        {
+          "timestamp": "2026-09-06T09:00:00.000Z",
+          "message": "Status changed to In Progress by Priya Sharma"
+        }
+      ]
+    },
+    {
+      "id": "TKT-1003",
+      "subject": "Need access to shared Finance drive",
+      "description": "I recently joined the finance team and need read/write access to the shared Finance drive on the network.",
+      "createdBy": "u4",
+      "createdByName": "John Employee",
+      "assignedAgent": null,
+      "assignedAgentName": null,
+      "category": "Access Request",
+      "priority": "Low",
+      "status": "Open",
+      "contactMethod": "Email",
+      "createdDate": "2026-09-07T14:00:00.000Z",
+      "updatedDate": "2026-09-07T14:00:00.000Z",
+      "dueDate": null,
+      "resolution": null,
+      "resolutionNotes": null,
+      "resolutionDate": null,
+      "activity": [
+        {
+          "timestamp": "2026-09-07T14:00:00.000Z",
+          "message": "Ticket created by John Employee"
+        }
+      ]
+    },
+    {
+      "id": "TKT-1004",
+      "subject": "Production server down - critical outage",
+      "description": "The main production application server is not responding. Customers are reporting they cannot access the portal.",
+      "createdBy": "u5",
+      "createdByName": "Sarah Williams",
+      "assignedAgent": "u2",
+      "assignedAgentName": "Raj Kumar",
+      "category": "Network",
+      "priority": "Critical",
+      "status": "Assigned",
+      "contactMethod": "Phone",
+      "createdDate": "2026-09-08T07:45:00.000Z",
+      "updatedDate": "2026-09-08T07:50:00.000Z",
+      "dueDate": "2026-09-08T09:45:00.000Z",
+      "resolution": null,
+      "resolutionNotes": null,
+      "resolutionDate": null,
+      "activity": [
+        {
+          "timestamp": "2026-09-08T07:45:00.000Z",
+          "message": "Ticket created by Sarah Williams"
+        },
+        {
+          "timestamp": "2026-09-08T07:50:00.000Z",
+          "message": "Ticket assigned to Raj Kumar by Alice Admin"
+        }
+      ]
+    },
+    {
+      "id": "TKT-1005",
+      "subject": "Request for new monitor",
+      "description": "My current monitor has a flickering screen issue. Requesting a replacement monitor for my workstation.",
+      "createdBy": "u4",
+      "createdByName": "John Employee",
+      "assignedAgent": "u3",
+      "assignedAgentName": "Priya Sharma",
+      "category": "Hardware",
+      "priority": "Medium",
+      "status": "Pending",
+      "contactMethod": "Email",
+      "createdDate": "2026-09-02T11:00:00.000Z",
+      "updatedDate": "2026-09-04T10:00:00.000Z",
+      "dueDate": "2026-09-10T18:00:00.000Z",
+      "resolution": null,
+      "resolutionNotes": null,
+      "resolutionDate": null,
+      "activity": [
+        {
+          "timestamp": "2026-09-02T11:00:00.000Z",
+          "message": "Ticket created by John Employee"
+        },
+        {
+          "timestamp": "2026-09-02T11:30:00.000Z",
+          "message": "Ticket assigned to Priya Sharma by Alice Admin"
+        },
+        {
+          "timestamp": "2026-09-03T09:00:00.000Z",
+          "message": "Status changed to In Progress by Priya Sharma"
+        },
+        {
+          "timestamp": "2026-09-04T10:00:00.000Z",
+          "message": "Status changed to Pending by Priya Sharma"
+        }
+      ]
+    },
+    {
+      "id": "TKT-1006",
+      "subject": "Phishing email received",
+      "description": "I received a suspicious email asking me to reset my password via an external link. Reporting for security review.",
+      "createdBy": "u5",
+      "createdByName": "Sarah Williams",
+      "assignedAgent": null,
+      "assignedAgentName": null,
+      "category": "Security",
+      "priority": "High",
+      "status": "Open",
+      "contactMethod": "Email",
+      "createdDate": "2026-09-06T16:20:00.000Z",
+      "updatedDate": "2026-09-06T16:20:00.000Z",
+      "dueDate": null,
+      "resolution": null,
+      "resolutionNotes": null,
+      "resolutionDate": null,
+      "activity": [
+        {
+          "timestamp": "2026-09-06T16:20:00.000Z",
+          "message": "Ticket created by Sarah Williams"
+        }
+      ]
+    },
+    {
+      "id": "TKT-1007",
+      "subject": "Password reset for email account",
+      "description": "I forgot my email password and the self-service reset link is not working for me.",
+      "createdBy": "u4",
+      "createdByName": "John Employee",
+      "assignedAgent": "u2",
+      "assignedAgentName": "Raj Kumar",
+      "category": "Email",
+      "priority": "Medium",
+      "status": "Resolved",
+      "contactMethod": "Chat",
+      "createdDate": "2026-08-28T09:00:00.000Z",
+      "updatedDate": "2026-08-28T10:00:00.000Z",
+      "dueDate": "2026-08-29T18:00:00.000Z",
+      "resolution": "Password was manually reset by IT and temporary credentials were sent securely.",
+      "resolutionNotes": "User was advised to change the password immediately after first login.",
+      "resolutionDate": "2026-08-28T10:00:00.000Z",
+      "activity": [
+        {
+          "timestamp": "2026-08-28T09:00:00.000Z",
+          "message": "Ticket created by John Employee"
+        },
+        {
+          "timestamp": "2026-08-28T09:15:00.000Z",
+          "message": "Ticket assigned to Raj Kumar by Alice Admin"
+        },
+        {
+          "timestamp": "2026-08-28T09:45:00.000Z",
+          "message": "Status changed to In Progress by Raj Kumar"
+        },
+        {
+          "timestamp": "2026-08-28T10:00:00.000Z",
+          "message": "Resolution added and ticket resolved by Raj Kumar"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "id": "cat1",
+      "name": "Hardware",
+      "description": "Issues related to physical devices, monitors, laptops, peripherals.",
+      "status": "Active"
+    },
+    {
+      "id": "cat2",
+      "name": "Software",
+      "description": "Application errors, installation, and licensing issues.",
+      "status": "Active"
+    },
+    {
+      "id": "cat3",
+      "name": "Network",
+      "description": "Wi-Fi, VPN, LAN, and connectivity related issues.",
+      "status": "Active"
+    },
+    {
+      "id": "cat4",
+      "name": "Email",
+      "description": "Mailbox, Outlook, and email delivery issues.",
+      "status": "Active"
+    },
+    {
+      "id": "cat5",
+      "name": "Security",
+      "description": "Phishing, malware, and account security concerns.",
+      "status": "Active"
+    },
+    {
+      "id": "cat6",
+      "name": "Access Request",
+      "description": "Requests for system, folder, or application access.",
+      "status": "Active"
+    },
+    {
+      "id": "cat7",
+      "name": "Other",
+      "description": "Anything that doesn't fit the categories above.",
+      "status": "Active"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
