@@ -143,8 +143,8 @@ const UserManagement = () => {
     <Layout>
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
         <div>
-          <h1 className="text-xl font-semibold text-ink-800 dark:text-ink-100">User management</h1>
-          <p className="text-ink-400 dark:text-ink-500 text-sm mt-1">{filtered.length} users</p>
+          <h1 className="text-xl font-semibold text-ink-800">User management</h1>
+          <p className="text-ink-400 text-sm mt-1">{filtered.length} users</p>
         </div>
         <button
           onClick={openCreateModal}
@@ -154,18 +154,18 @@ const UserManagement = () => {
         </button>
       </div>
 
-      <div className="bg-white dark:bg-ink-800 rounded-lg shadow-card border border-ink-100 dark:border-ink-700 p-4 mb-5 flex flex-col sm:flex-row gap-3">
+      <div className="bg-white rounded-lg shadow-card border border-ink-100 p-4 mb-5 flex flex-col sm:flex-row gap-3">
         <input
           type="text"
           placeholder="Search by name or email..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="flex-1 px-3 py-2 border border-ink-200 dark:border-ink-700 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary-500"
+          className="flex-1 px-3 py-2 border border-ink-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary-500"
         />
         <select
           value={roleFilter}
           onChange={(e) => setRoleFilter(e.target.value)}
-          className="px-3 py-2 border border-ink-200 dark:border-ink-700 rounded-lg text-sm"
+          className="px-3 py-2 border border-ink-200 rounded-lg text-sm"
         >
           <option value="">All Roles</option>
           <option value="Admin">Admin</option>
@@ -174,7 +174,7 @@ const UserManagement = () => {
         </select>
       </div>
 
-      <div className="bg-white dark:bg-ink-800 rounded-lg shadow-card border border-ink-100 dark:border-ink-700 overflow-hidden">
+      <div className="bg-white rounded-lg shadow-card border border-ink-100 overflow-hidden">
         {loading ? (
           <Loader label="Loading users..." />
         ) : error ? (
@@ -184,7 +184,7 @@ const UserManagement = () => {
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
-              <thead className="bg-ink-50 dark:bg-ink-700/40 text-ink-400 dark:text-ink-500 text-xs uppercase tracking-wide">
+              <thead className="bg-ink-50 text-ink-400 text-xs uppercase tracking-wide">
                 <tr>
                   <th className="text-left px-4 py-3 font-medium">Name</th>
                   <th className="text-left px-4 py-3 font-medium hidden md:table-cell">Email</th>
@@ -194,12 +194,12 @@ const UserManagement = () => {
                   <th className="text-right px-4 py-3 font-medium">Actions</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-ink-100 dark:divide-ink-700">
+              <tbody className="divide-y divide-ink-100">
                 {filtered.map((u) => (
-                  <tr key={u.id} className="hover:bg-ink-50 dark:hover:bg-ink-700/50">
-                    <td className="px-4 py-3 font-medium text-ink-800 dark:text-ink-100">{u.fullName}</td>
-                    <td className="px-4 py-3 text-ink-400 dark:text-ink-500 hidden md:table-cell">{u.email}</td>
-                    <td className="px-4 py-3 text-ink-400 dark:text-ink-500 hidden lg:table-cell">{u.department}</td>
+                  <tr key={u.id} className="hover:bg-ink-50">
+                    <td className="px-4 py-3 font-medium text-ink-800">{u.fullName}</td>
+                    <td className="px-4 py-3 text-ink-400 hidden md:table-cell">{u.email}</td>
+                    <td className="px-4 py-3 text-ink-400 hidden lg:table-cell">{u.department}</td>
                     <td className="px-4 py-3"><Badge label={u.role} className={roleColors[u.role]} /></td>
                     <td className="px-4 py-3">
                       <button onClick={() => handleToggleStatus(u)}>
@@ -207,15 +207,15 @@ const UserManagement = () => {
                           label={u.status}
                           className={
                             u.status === 'Active'
-                              ? 'bg-primary-50 dark:bg-primary-900/30 text-primary-800 dark:text-primary-200 border-primary-300 dark:border-primary-700'
-                              : 'bg-ink-100 dark:bg-ink-700 text-ink-500 dark:text-ink-400 border-ink-200 dark:border-ink-700'
+                              ? 'bg-primary-50 text-primary-800 border-primary-300'
+                              : 'bg-ink-100 text-ink-500 border-ink-200'
                           }
                         />
                       </button>
                     </td>
                     <td className="px-4 py-3 text-right space-x-2 whitespace-nowrap">
-                      <button onClick={() => setViewUser(u)} className="text-ink-400 dark:text-ink-500 hover:text-primary-600 dark:hover:text-primary-400 text-xs">View</button>
-                      <button onClick={() => openEditModal(u)} className="text-ink-400 dark:text-ink-500 hover:text-primary-600 dark:hover:text-primary-400 text-xs">Edit</button>
+                      <button onClick={() => setViewUser(u)} className="text-ink-400 hover:text-primary-600 text-xs">View</button>
+                      <button onClick={() => openEditModal(u)} className="text-ink-400 hover:text-primary-600 text-xs">Edit</button>
                       <button onClick={() => setDeleteTarget(u)} className="text-red-500 hover:text-red-700 text-xs">Delete</button>
                     </td>
                   </tr>
@@ -229,61 +229,61 @@ const UserManagement = () => {
       <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)} title={editingUser ? 'Edit User' : 'Add User'}>
         <form onSubmit={handleSubmit} noValidate className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-ink-700 dark:text-ink-200 mb-1">Full Name *</label>
+            <label className="block text-sm font-medium text-ink-700 mb-1">Full Name *</label>
             <input
               value={form.fullName}
               onChange={(e) => setForm({ ...form, fullName: e.target.value })}
-              className={`w-full px-3 py-2 border rounded-lg text-sm ${errors.fullName ? 'border-red-400' : 'border-ink-200 dark:border-ink-700'}`}
+              className={`w-full px-3 py-2 border rounded-lg text-sm ${errors.fullName ? 'border-red-400' : 'border-ink-200'}`}
             />
             {errors.fullName && <p className="text-red-500 text-xs mt-1">{errors.fullName}</p>}
           </div>
           <div>
-            <label className="block text-sm font-medium text-ink-700 dark:text-ink-200 mb-1">Email *</label>
+            <label className="block text-sm font-medium text-ink-700 mb-1">Email *</label>
             <input
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
-              className={`w-full px-3 py-2 border rounded-lg text-sm ${errors.email ? 'border-red-400' : 'border-ink-200 dark:border-ink-700'}`}
+              className={`w-full px-3 py-2 border rounded-lg text-sm ${errors.email ? 'border-red-400' : 'border-ink-200'}`}
             />
             {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
           </div>
           <div>
-            <label className="block text-sm font-medium text-ink-700 dark:text-ink-200 mb-1">
+            <label className="block text-sm font-medium text-ink-700 mb-1">
               Password {editingUser ? '(leave blank to keep current)' : '*'}
             </label>
             <input
               type="password"
               value={form.password}
               onChange={(e) => setForm({ ...form, password: e.target.value })}
-              className={`w-full px-3 py-2 border rounded-lg text-sm ${errors.password ? 'border-red-400' : 'border-ink-200 dark:border-ink-700'}`}
+              className={`w-full px-3 py-2 border rounded-lg text-sm ${errors.password ? 'border-red-400' : 'border-ink-200'}`}
             />
             {errors.password && <p className="text-red-500 text-xs mt-1">{errors.password}</p>}
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-ink-700 dark:text-ink-200 mb-1">Phone *</label>
+              <label className="block text-sm font-medium text-ink-700 mb-1">Phone *</label>
               <input
                 value={form.phone}
                 onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                className={`w-full px-3 py-2 border rounded-lg text-sm ${errors.phone ? 'border-red-400' : 'border-ink-200 dark:border-ink-700'}`}
+                className={`w-full px-3 py-2 border rounded-lg text-sm ${errors.phone ? 'border-red-400' : 'border-ink-200'}`}
               />
               {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
             </div>
             <div>
-              <label className="block text-sm font-medium text-ink-700 dark:text-ink-200 mb-1">Department *</label>
+              <label className="block text-sm font-medium text-ink-700 mb-1">Department *</label>
               <input
                 value={form.department}
                 onChange={(e) => setForm({ ...form, department: e.target.value })}
-                className={`w-full px-3 py-2 border rounded-lg text-sm ${errors.department ? 'border-red-400' : 'border-ink-200 dark:border-ink-700'}`}
+                className={`w-full px-3 py-2 border rounded-lg text-sm ${errors.department ? 'border-red-400' : 'border-ink-200'}`}
               />
               {errors.department && <p className="text-red-500 text-xs mt-1">{errors.department}</p>}
             </div>
           </div>
           <div>
-            <label className="block text-sm font-medium text-ink-700 dark:text-ink-200 mb-1">Role *</label>
+            <label className="block text-sm font-medium text-ink-700 mb-1">Role *</label>
             <select
               value={form.role}
               onChange={(e) => setForm({ ...form, role: e.target.value as Role })}
-              className="w-full px-3 py-2 border border-ink-200 dark:border-ink-700 rounded-lg text-sm"
+              className="w-full px-3 py-2 border border-ink-200 rounded-lg text-sm"
             >
               <option value="Admin">Admin</option>
               <option value="Support Agent">Support Agent</option>
@@ -291,7 +291,7 @@ const UserManagement = () => {
             </select>
           </div>
           <div className="flex justify-end gap-3 pt-2">
-            <button type="button" onClick={() => setModalOpen(false)} className="px-4 py-2 text-sm text-ink-600 dark:text-ink-300 hover:bg-ink-50 dark:hover:bg-ink-700/50 rounded-lg">
+            <button type="button" onClick={() => setModalOpen(false)} className="px-4 py-2 text-sm text-ink-600 hover:bg-ink-50 rounded-lg">
               Cancel
             </button>
             <button type="submit" className="px-4 py-2 text-sm bg-primary-600 text-white rounded-lg hover:bg-primary-700">
@@ -304,12 +304,12 @@ const UserManagement = () => {
       <Modal isOpen={!!viewUser} onClose={() => setViewUser(null)} title="User Details" size="sm">
         {viewUser && (
           <div className="space-y-3 text-sm">
-            <div><p className="text-ink-400 dark:text-ink-500 text-xs">Full Name</p><p className="font-medium">{viewUser.fullName}</p></div>
-            <div><p className="text-ink-400 dark:text-ink-500 text-xs">Email</p><p className="font-medium">{viewUser.email}</p></div>
-            <div><p className="text-ink-400 dark:text-ink-500 text-xs">Phone</p><p className="font-medium">{viewUser.phone}</p></div>
-            <div><p className="text-ink-400 dark:text-ink-500 text-xs">Department</p><p className="font-medium">{viewUser.department}</p></div>
-            <div><p className="text-ink-400 dark:text-ink-500 text-xs">Role</p><Badge label={viewUser.role} className={roleColors[viewUser.role]} /></div>
-            <div><p className="text-ink-400 dark:text-ink-500 text-xs">Created</p><p className="font-medium">{formatDate(viewUser.createdDate)}</p></div>
+            <div><p className="text-ink-400 text-xs">Full Name</p><p className="font-medium">{viewUser.fullName}</p></div>
+            <div><p className="text-ink-400 text-xs">Email</p><p className="font-medium">{viewUser.email}</p></div>
+            <div><p className="text-ink-400 text-xs">Phone</p><p className="font-medium">{viewUser.phone}</p></div>
+            <div><p className="text-ink-400 text-xs">Department</p><p className="font-medium">{viewUser.department}</p></div>
+            <div><p className="text-ink-400 text-xs">Role</p><Badge label={viewUser.role} className={roleColors[viewUser.role]} /></div>
+            <div><p className="text-ink-400 text-xs">Created</p><p className="font-medium">{formatDate(viewUser.createdDate)}</p></div>
           </div>
         )}
       </Modal>

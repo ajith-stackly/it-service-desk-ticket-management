@@ -83,56 +83,56 @@ const CreateTicket = () => {
   return (
     <Layout>
       <div className="max-w-2xl mx-auto">
-        <h1 className="text-xl font-semibold text-ink-800 dark:text-ink-100 mb-1">Create support ticket</h1>
-        <p className="text-ink-400 dark:text-ink-500 text-[13.5px] mb-6">Describe your issue and we'll get it sorted.</p>
+        <h1 className="text-xl font-semibold text-ink-800 mb-1">Create support ticket</h1>
+        <p className="text-ink-400 text-[13.5px] mb-6">Describe your issue and we'll get it sorted.</p>
 
-        <form onSubmit={handleSubmit} noValidate className="bg-white dark:bg-ink-800 rounded-lg border border-ink-100 dark:border-ink-700 shadow-card p-6 space-y-5">
+        <form onSubmit={handleSubmit} noValidate className="bg-white rounded-lg border border-ink-100 shadow-card p-6 space-y-5">
           <div>
-            <label className="block text-[13px] font-medium text-ink-600 dark:text-ink-300 mb-1.5">Subject *</label>
+            <label className="block text-[13px] font-medium text-ink-600 mb-1.5">Subject *</label>
             <input
               type="text"
               value={subject}
               onChange={(e) => setSubject(e.target.value)}
               placeholder="Brief summary of the issue"
-              className={`${inputClass} ${errors.subject ? 'border-[#D9847D] dark:border-red-700' : 'border-ink-200 dark:border-ink-700'}`}
+              className={`${inputClass} ${errors.subject ? 'border-[#D9847D]' : 'border-ink-200'}`}
             />
-            {errors.subject && <p className="text-[#9B3A32] dark:text-red-300 text-xs mt-1.5">{errors.subject}</p>}
+            {errors.subject && <p className="text-[#9B3A32] text-xs mt-1.5">{errors.subject}</p>}
           </div>
 
           <div>
-            <label className="block text-[13px] font-medium text-ink-600 dark:text-ink-300 mb-1.5">Description *</label>
+            <label className="block text-[13px] font-medium text-ink-600 mb-1.5">Description *</label>
             <textarea
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               rows={5}
               placeholder="Provide as much detail as possible..."
-              className={`${inputClass} ${errors.description ? 'border-[#D9847D] dark:border-red-700' : 'border-ink-200 dark:border-ink-700'}`}
+              className={`${inputClass} ${errors.description ? 'border-[#D9847D]' : 'border-ink-200'}`}
             />
-            {errors.description && <p className="text-[#9B3A32] dark:text-red-300 text-xs mt-1.5">{errors.description}</p>}
+            {errors.description && <p className="text-[#9B3A32] text-xs mt-1.5">{errors.description}</p>}
           </div>
 
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label className="block text-[13px] font-medium text-ink-600 dark:text-ink-300 mb-1.5">Category *</label>
+              <label className="block text-[13px] font-medium text-ink-600 mb-1.5">Category *</label>
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
-                className={`${inputClass} ${errors.category ? 'border-[#D9847D] dark:border-red-700' : 'border-ink-200 dark:border-ink-700'}`}
+                className={`${inputClass} ${errors.category ? 'border-[#D9847D]' : 'border-ink-200'}`}
               >
                 <option value="">Select category</option>
                 {activeCategories.map((c) => (
                   <option key={c.id} value={c.name}>{c.name}</option>
                 ))}
               </select>
-              {errors.category && <p className="text-[#9B3A32] dark:text-red-300 text-xs mt-1.5">{errors.category}</p>}
+              {errors.category && <p className="text-[#9B3A32] text-xs mt-1.5">{errors.category}</p>}
             </div>
 
             <div>
-              <label className="block text-[13px] font-medium text-ink-600 dark:text-ink-300 mb-1.5">Priority *</label>
+              <label className="block text-[13px] font-medium text-ink-600 mb-1.5">Priority *</label>
               <select
                 value={priority}
                 onChange={(e) => setPriority(e.target.value as Priority)}
-                className={`${inputClass} border-ink-200 dark:border-ink-700`}
+                className={`${inputClass} border-ink-200`}
               >
                 <option value="Low">Low</option>
                 <option value="Medium">Medium</option>
@@ -143,10 +143,10 @@ const CreateTicket = () => {
           </div>
 
           <div>
-            <label className="block text-[13px] font-medium text-ink-600 dark:text-ink-300 mb-2">Preferred contact method</label>
+            <label className="block text-[13px] font-medium text-ink-600 mb-2">Preferred contact method</label>
             <div className="flex gap-5">
               {(['Email', 'Phone', 'Chat'] as ContactMethod[]).map((m) => (
-                <label key={m} className="flex items-center gap-2 text-[13.5px] text-ink-600 dark:text-ink-300 cursor-pointer">
+                <label key={m} className="flex items-center gap-2 text-[13.5px] text-ink-600 cursor-pointer">
                   <input
                     type="radio"
                     checked={contactMethod === m}
@@ -159,11 +159,11 @@ const CreateTicket = () => {
             </div>
           </div>
 
-          <div className="flex justify-end gap-3 pt-2 border-t border-ink-100 dark:border-ink-700">
+          <div className="flex justify-end gap-3 pt-2 border-t border-ink-100">
             <button
               type="button"
               onClick={() => navigate(-1)}
-              className="px-4 py-2.5 rounded-md text-[13px] font-medium text-ink-500 dark:text-ink-400 hover:bg-ink-50 dark:hover:bg-ink-700/50"
+              className="px-4 py-2.5 rounded-md text-[13px] font-medium text-ink-500 hover:bg-ink-50"
             >
               Cancel
             </button>

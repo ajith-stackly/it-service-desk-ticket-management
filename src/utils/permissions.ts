@@ -9,6 +9,12 @@ export const can = {
   manageUsers: (role: Role) => role === 'Admin',
   manageCategories: (role: Role) => role === 'Admin',
   addResolution: (role: Role) => role === 'Admin' || role === 'Support Agent',
+  addComment: (role: Role, ticket: Ticket, userId: string) => {
+    if (role === 'Admin') return true;
+    if (role === 'Support Agent') return ticket.assignedAgent === userId;
+    if (role === 'Employee') return ticket.createdBy === userId;
+    return false;
+  },
   updatePriority: (role: Role, ticket: Ticket, userId: string) =>
     role === 'Admin' || (role === 'Support Agent' && ticket.assignedAgent === userId),
 
@@ -85,24 +91,24 @@ export function getAvailableActions(role: Role, ticket: Ticket, userId: string):
 }
 
 export const statusColors: Record<Status, string> = {
-  Open: 'bg-ink-100 dark:bg-ink-700 text-ink-600 dark:text-ink-300 border-ink-200 dark:border-ink-700',
-  Assigned: 'bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-300 border-primary-200 dark:border-primary-800',
-  'In Progress': 'bg-signal-100 dark:bg-signal-500/20 text-signal-600 dark:text-signal-400 border-signal-400/40',
-  Pending: 'bg-[#FBEFE0] dark:bg-amber-500/10 text-[#8A5522] dark:text-amber-300 border-[#E9CBA0] dark:border-amber-800/40',
-  Resolved: 'bg-primary-50 dark:bg-primary-900/30 text-primary-800 dark:text-primary-200 border-primary-300 dark:border-primary-700',
+  Open: 'bg-ink-100 text-ink-600 border-ink-200',
+  Assigned: 'bg-primary-100 text-primary-700 border-primary-200',
+  'In Progress': 'bg-signal-100 text-signal-600 border-signal-400/40',
+  Pending: 'bg-[#FBEFE0] text-[#8A5522] border-[#E9CBA0]',
+  Resolved: 'bg-primary-50 text-primary-800 border-primary-300',
   Closed: 'bg-ink-800 text-ink-100 border-ink-700',
-  Cancelled: 'bg-[#FBE7E5] dark:bg-red-500/10 text-[#9B3A32] dark:text-red-300 border-[#EFC0BB] dark:border-red-800/50',
+  Cancelled: 'bg-[#FBE7E5] text-[#9B3A32] border-[#EFC0BB]',
 };
 
 export const priorityColors: Record<string, string> = {
-  Low: 'bg-ink-50 dark:bg-ink-700/40 text-ink-500 dark:text-ink-400 border-ink-200 dark:border-ink-700',
-  Medium: 'bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 border-primary-200 dark:border-primary-800',
-  High: 'bg-signal-50 dark:bg-signal-500/10 text-signal-600 dark:text-signal-400 border-signal-400/40',
+  Low: 'bg-ink-50 text-ink-500 border-ink-200',
+  Medium: 'bg-primary-50 text-primary-700 border-primary-200',
+  High: 'bg-signal-50 text-signal-600 border-signal-400/40',
   Critical: 'bg-[#9B3A32] text-white border-[#9B3A32] font-semibold',
 };
 
 export const roleColors: Record<Role, string> = {
   Admin: 'bg-ink-800 text-white border-ink-700',
-  'Support Agent': 'bg-primary-100 dark:bg-primary-900/40 text-primary-800 dark:text-primary-200 border-primary-300 dark:border-primary-700',
-  Employee: 'bg-ink-50 dark:bg-ink-700/40 text-ink-500 dark:text-ink-400 border-ink-200 dark:border-ink-700',
+  'Support Agent': 'bg-primary-100 text-primary-800 border-primary-300',
+  Employee: 'bg-ink-50 text-ink-500 border-ink-200',
 };

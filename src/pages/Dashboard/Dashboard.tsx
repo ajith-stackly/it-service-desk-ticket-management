@@ -33,12 +33,12 @@ const Dashboard = () => {
   return (
     <Layout>
       <div className="mb-7">
-        <h1 className="text-xl font-semibold text-ink-800 dark:text-ink-100">
+        <h1 className="text-xl font-semibold text-ink-800">
           {user?.role === 'Admin' && 'Admin dashboard'}
           {user?.role === 'Support Agent' && 'My queue'}
           {user?.role === 'Employee' && 'My dashboard'}
         </h1>
-        <p className="text-ink-400 dark:text-ink-500 text-[13.5px] mt-1">Overview of ticket activity and statistics.</p>
+        <p className="text-ink-400 text-[13.5px] mt-1">Overview of ticket activity and statistics.</p>
       </div>
 
       {user?.role === 'Admin' && (
@@ -81,17 +81,17 @@ const Dashboard = () => {
         </div>
       )}
 
-      <div className="bg-white dark:bg-ink-800 rounded-lg border border-ink-100 dark:border-ink-700 shadow-card">
-        <div className="px-5 py-4 border-b border-ink-100 dark:border-ink-700 flex items-center justify-between">
-          <h2 className="font-semibold text-ink-800 dark:text-ink-100 text-[14.5px]">Recent activity</h2>
-          <Link to="/tickets" className="text-[13px] text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium">
+      <div className="bg-white rounded-lg border border-ink-100 shadow-card">
+        <div className="px-5 py-4 border-b border-ink-100 flex items-center justify-between">
+          <h2 className="font-semibold text-ink-800 text-[14.5px]">Recent activity</h2>
+          <Link to="/tickets" className="text-[13px] text-primary-600 hover:text-primary-700 font-medium">
             View all
           </Link>
         </div>
         {recent.length === 0 ? (
-          <p className="text-ink-400 dark:text-ink-500 text-sm px-5 py-10 text-center">No tickets yet.</p>
+          <p className="text-ink-400 text-sm px-5 py-10 text-center">No tickets yet.</p>
         ) : (
-          <div className="divide-y divide-ink-100 dark:divide-ink-700">
+          <div className="divide-y divide-ink-100">
             {recent.map((t) => (
               <Link
                 key={t.id}
@@ -99,11 +99,11 @@ const Dashboard = () => {
                 className="flex items-center justify-between px-5 py-3.5 hover:bg-ink-50/60 transition-colors"
               >
                 <div className="min-w-0 flex-1">
-                  <p className="text-[13.5px] font-medium text-ink-800 dark:text-ink-100 truncate">
-                    <span className="text-ink-400 dark:text-ink-500 font-data font-normal mr-2.5 text-xs">{t.id}</span>
+                  <p className="text-[13.5px] font-medium text-ink-800 truncate">
+                    <span className="text-ink-400 font-data font-normal mr-2.5 text-xs">{t.id}</span>
                     {t.subject}
                   </p>
-                  <p className="text-xs text-ink-400 dark:text-ink-500 mt-1">Updated {formatDate(t.updatedDate)}</p>
+                  <p className="text-xs text-ink-400 mt-1">Updated {formatDate(t.updatedDate)}</p>
                 </div>
                 <div className="flex items-center gap-2 ml-4 shrink-0">
                   <Badge label={t.priority} className={priorityColors[t.priority]} />

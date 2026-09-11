@@ -7,8 +7,8 @@ export const EmptyState = ({
   icon?: string;
 }) => (
   <div className="flex flex-col items-center justify-center py-16 text-center gap-1.5">
-    <p className="text-ink-600 dark:text-ink-300 font-medium text-[14px]">{title}</p>
-    <p className="text-[13px] text-ink-400 dark:text-ink-500">{subtitle}</p>
+    <p className="text-ink-600 font-medium text-[14px]">{title}</p>
+    <p className="text-[13px] text-ink-400">{subtitle}</p>
   </div>
 );
 
@@ -20,7 +20,7 @@ export const ErrorState = ({
   onRetry?: () => void;
 }) => (
   <div className="flex flex-col items-center justify-center py-16 text-center gap-3">
-    <p className="text-[#9B3A32] dark:text-red-300 font-medium text-[13.5px] max-w-sm">{message}</p>
+    <p className="text-[#9B3A32] font-medium text-[13.5px] max-w-sm">{message}</p>
     {onRetry && (
       <button
         onClick={onRetry}

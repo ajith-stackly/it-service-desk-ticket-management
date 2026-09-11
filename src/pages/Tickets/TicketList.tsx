@@ -90,16 +90,16 @@ const TicketList = () => {
   };
 
   const inputClass =
-    'px-3 py-2 border border-ink-200 dark:border-ink-700 rounded-md text-[13px] focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 bg-white dark:bg-ink-800';
+    'px-3 py-2 border border-ink-200 rounded-md text-[13px] focus:outline-none focus:ring-2 focus:ring-primary-500/30 focus:border-primary-500 bg-white';
 
   return (
     <Layout>
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
         <div>
-          <h1 className="text-xl font-semibold text-ink-800 dark:text-ink-100">
+          <h1 className="text-xl font-semibold text-ink-800">
             {user?.role === 'Employee' ? 'My tickets' : 'Tickets'}
           </h1>
-          <p className="text-ink-400 dark:text-ink-500 text-[13.5px] mt-1">
+          <p className="text-ink-400 text-[13.5px] mt-1">
             {filtered.length} ticket{filtered.length !== 1 ? 's' : ''}
           </p>
         </div>
@@ -111,7 +111,7 @@ const TicketList = () => {
         </Link>
       </div>
 
-      <div className="bg-white dark:bg-ink-800 rounded-lg border border-ink-100 dark:border-ink-700 shadow-card p-4 mb-5 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-3">
+      <div className="bg-white rounded-lg border border-ink-100 shadow-card p-4 mb-5 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-3">
         <input
           type="text"
           placeholder="Search ID, subject, name..."
@@ -184,13 +184,13 @@ const TicketList = () => {
         </select>
         <button
           onClick={resetFilters}
-          className="text-[13px] text-ink-400 dark:text-ink-500 hover:text-ink-700 dark:hover:text-ink-200 text-left"
+          className="text-[13px] text-ink-400 hover:text-ink-700 text-left"
         >
           Clear filters
         </button>
       </div>
 
-      <div className="bg-white dark:bg-ink-800 rounded-lg border border-ink-100 dark:border-ink-700 shadow-card overflow-hidden">
+      <div className="bg-white rounded-lg border border-ink-100 shadow-card overflow-hidden">
         {loading ? (
           <Loader label="Loading tickets..." />
         ) : error ? (
@@ -202,7 +202,7 @@ const TicketList = () => {
             {/* Desktop table */}
             <div className="hidden md:block overflow-x-auto">
               <table className="w-full text-[13.5px]">
-                <thead className="bg-ink-50/70 text-ink-400 dark:text-ink-500 text-[11px] uppercase tracking-wide">
+                <thead className="bg-ink-50/70 text-ink-400 text-[11px] uppercase tracking-wide">
                   <tr>
                     <th className="text-left px-4 py-3 font-medium">Ticket</th>
                     <th className="text-left px-4 py-3 font-medium">Subject</th>
@@ -213,24 +213,24 @@ const TicketList = () => {
                     <th className="text-left px-4 py-3 font-medium">Created</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-ink-100 dark:divide-ink-700">
+                <tbody className="divide-y divide-ink-100">
                   {paged.map((t) => (
-                    <tr key={t.id} className="hover:bg-ink-50/50 transition-colors">
-                      <td className="px-4 py-3 font-medium text-primary-700 dark:text-primary-300 font-data">
+                    <tr key={t.id} className="hover:bg-primary-50/60 transition-colors cursor-default">
+                      <td className="px-4 py-3 font-medium text-primary-700 font-data">
                         <Link to={`/tickets/${t.id}`}>{t.id}</Link>
                       </td>
-                      <td className="px-4 py-3 text-ink-700 dark:text-ink-200 max-w-xs truncate">
+                      <td className="px-4 py-3 text-ink-700 max-w-xs truncate">
                         <Link to={`/tickets/${t.id}`}>{t.subject}</Link>
                       </td>
-                      <td className="px-4 py-3 text-ink-500 dark:text-ink-400">{t.category}</td>
-                      <td className="px-4 py-3 text-ink-500 dark:text-ink-400">{t.assignedAgentName || '—'}</td>
+                      <td className="px-4 py-3 text-ink-500">{t.category}</td>
+                      <td className="px-4 py-3 text-ink-500">{t.assignedAgentName || '—'}</td>
                       <td className="px-4 py-3">
                         <Badge label={t.priority} className={priorityColors[t.priority]} />
                       </td>
                       <td className="px-4 py-3">
                         <Badge label={t.status} className={statusColors[t.status]} />
                       </td>
-                      <td className="px-4 py-3 text-ink-400 dark:text-ink-500 font-data text-xs">{formatDate(t.createdDate)}</td>
+                      <td className="px-4 py-3 text-ink-400 font-data text-xs">{formatDate(t.createdDate)}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -238,22 +238,22 @@ const TicketList = () => {
             </div>
 
             {/* Mobile cards */}
-            <div className="md:hidden divide-y divide-ink-100 dark:divide-ink-700">
+            <div className="md:hidden divide-y divide-ink-100">
               {paged.map((t) => (
                 <Link
                   key={t.id}
                   to={`/tickets/${t.id}`}
-                  className="block px-4 py-3.5 hover:bg-ink-50/50 transition-colors"
+                  className="block px-4 py-3.5 hover:bg-primary-50/60 transition-colors"
                 >
                   <div className="flex items-center justify-between mb-1.5">
-                    <span className="text-xs font-data text-ink-400 dark:text-ink-500">{t.id}</span>
+                    <span className="text-xs font-data text-ink-400">{t.id}</span>
                     <div className="flex gap-1.5">
                       <Badge label={t.priority} className={priorityColors[t.priority]} />
                       <Badge label={t.status} className={statusColors[t.status]} />
                     </div>
                   </div>
-                  <p className="text-[13.5px] font-medium text-ink-800 dark:text-ink-100 mb-1">{t.subject}</p>
-                  <p className="text-xs text-ink-400 dark:text-ink-500">
+                  <p className="text-[13.5px] font-medium text-ink-800 mb-1">{t.subject}</p>
+                  <p className="text-xs text-ink-400">
                     {t.category} · {t.assignedAgentName || 'Unassigned'} · {formatDate(t.createdDate)}
                   </p>
                 </Link>

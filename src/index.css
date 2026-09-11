@@ -9,18 +9,12 @@ html {
 }
 
 body {
-  @apply bg-[#F5F6F8] text-ink-800 dark:bg-ink-900 dark:text-ink-100;
-  transition: background-color 0.15s ease;
+  @apply bg-[#F5F6F8] text-ink-800;
 }
 
 ::selection {
   background-color: #A6D9D7;
   color: #052D31;
-}
-
-.dark ::selection {
-  background-color: #0B6670;
-  color: #EBF6F6;
 }
 
 .font-data {
@@ -31,10 +25,6 @@ body {
 * {
   scrollbar-width: thin;
   scrollbar-color: #B3BDD1 transparent;
-}
-
-.dark * {
-  scrollbar-color: #3A4360 transparent;
 }
 
 :focus-visible {

@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { ToastProvider } from './context/ToastContext';
-import { ThemeProvider } from './context/ThemeContext';
 import ProtectedRoute from './routes/ProtectedRoute';
 
 import Login from './pages/Login/Login';
@@ -16,7 +15,6 @@ import Profile from './pages/Profile/Profile';
 
 function App() {
   return (
-    <ThemeProvider>
     <AuthProvider>
       <ToastProvider>
         <BrowserRouter>
@@ -57,7 +55,6 @@ function App() {
         </BrowserRouter>
       </ToastProvider>
     </AuthProvider>
-    </ThemeProvider>
   );
 }
 

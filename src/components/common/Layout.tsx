@@ -6,7 +6,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="flex min-h-screen bg-[#F5F6F8] dark:bg-ink-900">
+    <div className="flex min-h-screen bg-[#F5F6F8]">
       <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
       <div className="flex-1 flex flex-col min-w-0">
         <Navbar onMenuClick={() => setSidebarOpen((s) => !s)} />

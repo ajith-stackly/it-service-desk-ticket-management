@@ -10,11 +10,11 @@ const Pagination = ({ currentPage, totalPages, onPageChange }: PaginationProps) 
   const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   return (
-    <div className="flex items-center justify-center gap-1 py-4 border-t border-ink-100 dark:border-ink-700">
+    <div className="flex items-center justify-center gap-1 py-4 border-t border-ink-100">
       <button
         disabled={currentPage === 1}
         onClick={() => onPageChange(currentPage - 1)}
-        className="px-3 py-1.5 rounded-md text-[13px] font-medium border border-ink-200 dark:border-ink-700 disabled:opacity-30 hover:bg-ink-50 dark:hover:bg-ink-700/50 transition-colors"
+        className="px-3 py-1.5 rounded-md text-[13px] font-medium border border-ink-200 disabled:opacity-30 hover:bg-ink-50 transition-colors"
       >
         Prev
       </button>
@@ -23,7 +23,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }: PaginationProps) 
           key={p}
           onClick={() => onPageChange(p)}
           className={`w-8 h-8 rounded-md text-[13px] font-medium transition-colors ${
-            p === currentPage ? 'bg-ink-800 text-white' : 'border border-ink-200 dark:border-ink-700 hover:bg-ink-50 dark:hover:bg-ink-700/50'
+            p === currentPage ? 'bg-ink-800 text-white' : 'border border-ink-200 hover:bg-ink-50'
           }`}
         >
           {p}
@@ -32,7 +32,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }: PaginationProps) 
       <button
         disabled={currentPage === totalPages}
         onClick={() => onPageChange(currentPage + 1)}
-        className="px-3 py-1.5 rounded-md text-[13px] font-medium border border-ink-200 dark:border-ink-700 disabled:opacity-30 hover:bg-ink-50 dark:hover:bg-ink-700/50 transition-colors"
+        className="px-3 py-1.5 rounded-md text-[13px] font-medium border border-ink-200 disabled:opacity-30 hover:bg-ink-50 transition-colors"
       >
         Next
       </button>

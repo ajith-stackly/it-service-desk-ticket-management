@@ -69,23 +69,6 @@
   ],
   "tickets": [
     {
-      "id": "TKT-1001",
-      "subject": "Unable to connect to office Wi-Fi",
-      "description": "My laptop keeps disconnecting from the office Wi-Fi network every few minutes. This started happening yesterday afternoon.",
-      "createdBy": "u4",
-      "createdByName": "John Employee",
-      "assignedAgent": "u2",
-      "assignedAgentName": "Raj Kumar",
-      "category": "Network",
-      "priority": "High",
-      "status": "Closed",
-      "contactMethod": "Email",
-      "createdDate": "2026-08-20T10:30:00.000Z",
-      "updatedDate": "2026-08-20T13:30:00.000Z",
-      "dueDate": "2026-08-21T18:00:00.000Z",
-      "resolution": "Network adapter was reset and the device was reconnected to the corporate Wi-Fi.",
-      "resolutionNotes": "Advised the user to update their Wi-Fi driver as a preventive measure.",
-      "resolutionDate": "2026-08-20T13:00:00.000Z",
       "activity": [
         {
           "timestamp": "2026-08-20T10:30:00.000Z",
@@ -110,8 +93,13 @@
         {
           "timestamp": "2026-08-20T13:30:00.000Z",
           "message": "Status changed to Closed by Raj Kumar"
+        },
+        {
+          "timestamp": "2026-09-11T06:26:39.039Z",
+          "message": "Comment added by Alice Admin"
         }
-      ]
+      ],
+      "id": "TKT-1001"
     },
     {
       "id": "TKT-1002",
@@ -342,6 +330,35 @@
       "name": "Other",
       "description": "Anything that doesn't fit the categories above.",
       "status": "Active"
+    }
+  ],
+  "comments": [
+    {
+      "id": "CMT-1",
+      "ticketId": "TKT-1001",
+      "userId": "u2",
+      "userName": "Raj Kumar",
+      "comment": "Checked the Wi-Fi adapter settings remotely, issue looks like a driver conflict. Resetting the adapter now.",
+      "createdDate": "2026-08-20T12:15:00.000Z",
+      "createdTime": "12:15 PM"
+    },
+    {
+      "id": "CMT-2",
+      "ticketId": "TKT-1001",
+      "userId": "u4",
+      "userName": "John Employee",
+      "comment": "Thanks, connection looks stable now. Will let you know if it drops again.",
+      "createdDate": "2026-08-20T13:10:00.000Z",
+      "createdTime": "1:10 PM"
+    },
+    {
+      "ticketId": "TKT-1001",
+      "userId": "u1",
+      "userName": "Alice Admin",
+      "comment": "Issue Solved",
+      "createdDate": "2026-09-11T06:26:38.819Z",
+      "createdTime": "11:56 AM",
+      "id": "C4DxS2C"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
