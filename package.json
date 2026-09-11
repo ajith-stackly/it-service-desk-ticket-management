@@ -8,10 +8,12 @@
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "server": "json-server --port 4000 db.json"
+    "server": "node server.cjs"
   },
   "dependencies": {
     "axios": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^5.0.0",
     "json-server": "0.17.4",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",

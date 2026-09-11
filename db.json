@@ -102,31 +102,6 @@
       "id": "TKT-1001"
     },
     {
-      "id": "TKT-1003",
-      "subject": "Need access to shared Finance drive",
-      "description": "I recently joined the finance team and need read/write access to the shared Finance drive on the network.",
-      "createdBy": "u4",
-      "createdByName": "John Employee",
-      "assignedAgent": null,
-      "assignedAgentName": null,
-      "category": "Access Request",
-      "priority": "Low",
-      "status": "Open",
-      "contactMethod": "Email",
-      "createdDate": "2026-09-07T14:00:00.000Z",
-      "updatedDate": "2026-09-07T14:00:00.000Z",
-      "dueDate": null,
-      "resolution": null,
-      "resolutionNotes": null,
-      "resolutionDate": null,
-      "activity": [
-        {
-          "timestamp": "2026-09-07T14:00:00.000Z",
-          "message": "Ticket created by John Employee"
-        }
-      ]
-    },
-    {
       "id": "TKT-1005",
       "subject": "Request for new monitor",
       "description": "My current monitor has a flickering screen issue. Requesting a replacement monitor for my workstation.",
