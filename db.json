@@ -102,39 +102,6 @@
       "id": "TKT-1001"
     },
     {
-      "id": "TKT-1002",
-      "subject": "Outlook is crashing on startup",
-      "description": "Every time I try to open Outlook it crashes immediately with an error dialog. I have already restarted my computer twice.",
-      "createdBy": "u5",
-      "createdByName": "Sarah Williams",
-      "assignedAgent": "u3",
-      "assignedAgentName": "Priya Sharma",
-      "category": "Software",
-      "priority": "Medium",
-      "status": "In Progress",
-      "contactMethod": "Chat",
-      "createdDate": "2026-09-05T08:15:00.000Z",
-      "updatedDate": "2026-09-06T09:00:00.000Z",
-      "dueDate": "2026-09-08T18:00:00.000Z",
-      "resolution": null,
-      "resolutionNotes": null,
-      "resolutionDate": null,
-      "activity": [
-        {
-          "timestamp": "2026-09-05T08:15:00.000Z",
-          "message": "Ticket created by Sarah Williams"
-        },
-        {
-          "timestamp": "2026-09-05T08:40:00.000Z",
-          "message": "Ticket assigned to Priya Sharma by Alice Admin"
-        },
-        {
-          "timestamp": "2026-09-06T09:00:00.000Z",
-          "message": "Status changed to In Progress by Priya Sharma"
-        }
-      ]
-    },
-    {
       "id": "TKT-1003",
       "subject": "Need access to shared Finance drive",
       "description": "I recently joined the finance team and need read/write access to the shared Finance drive on the network.",
@@ -156,35 +123,6 @@
         {
           "timestamp": "2026-09-07T14:00:00.000Z",
           "message": "Ticket created by John Employee"
-        }
-      ]
-    },
-    {
-      "id": "TKT-1004",
-      "subject": "Production server down - critical outage",
-      "description": "The main production application server is not responding. Customers are reporting they cannot access the portal.",
-      "createdBy": "u5",
-      "createdByName": "Sarah Williams",
-      "assignedAgent": "u2",
-      "assignedAgentName": "Raj Kumar",
-      "category": "Network",
-      "priority": "Critical",
-      "status": "Assigned",
-      "contactMethod": "Phone",
-      "createdDate": "2026-09-08T07:45:00.000Z",
-      "updatedDate": "2026-09-08T07:50:00.000Z",
-      "dueDate": "2026-09-08T09:45:00.000Z",
-      "resolution": null,
-      "resolutionNotes": null,
-      "resolutionDate": null,
-      "activity": [
-        {
-          "timestamp": "2026-09-08T07:45:00.000Z",
-          "message": "Ticket created by Sarah Williams"
-        },
-        {
-          "timestamp": "2026-09-08T07:50:00.000Z",
-          "message": "Ticket assigned to Raj Kumar by Alice Admin"
         }
       ]
     },
