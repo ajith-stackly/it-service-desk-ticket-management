@@ -97,106 +97,64 @@
         {
           "timestamp": "2026-09-11T06:26:39.039Z",
           "message": "Comment added by Alice Admin"
+        },
+        {
+          "timestamp": "2026-09-15T06:20:36.922Z",
+          "message": "Ticket assigned to Raj Kumar by Alice Admin"
         }
       ],
-      "id": "TKT-1001"
+      "id": "TKT-1001",
+      "assignedAgent": "u2",
+      "assignedAgentName": "Raj Kumar",
+      "updatedDate": "2026-09-15T06:20:36.922Z"
     },
     {
       "id": "TKT-1005",
-      "subject": "Request for new monitor",
-      "description": "My current monitor has a flickering screen issue. Requesting a replacement monitor for my workstation.",
-      "createdBy": "u4",
-      "createdByName": "John Employee",
-      "assignedAgent": "u3",
-      "assignedAgentName": "Priya Sharma",
-      "category": "Hardware",
-      "priority": "Medium",
-      "status": "Pending",
-      "contactMethod": "Email",
-      "createdDate": "2026-09-02T11:00:00.000Z",
-      "updatedDate": "2026-09-04T10:00:00.000Z",
-      "dueDate": "2026-09-10T18:00:00.000Z",
-      "resolution": null,
-      "resolutionNotes": null,
-      "resolutionDate": null,
-      "activity": [
-        {
-          "timestamp": "2026-09-02T11:00:00.000Z",
-          "message": "Ticket created by John Employee"
-        },
-        {
-          "timestamp": "2026-09-02T11:30:00.000Z",
-          "message": "Ticket assigned to Priya Sharma by Alice Admin"
-        },
-        {
-          "timestamp": "2026-09-03T09:00:00.000Z",
-          "message": "Status changed to In Progress by Priya Sharma"
-        },
-        {
-          "timestamp": "2026-09-04T10:00:00.000Z",
-          "message": "Status changed to Pending by Priya Sharma"
-        }
-      ]
-    },
-    {
-      "id": "TKT-1006",
-      "subject": "Phishing email received",
-      "description": "I received a suspicious email asking me to reset my password via an external link. Reporting for security review.",
-      "createdBy": "u5",
-      "createdByName": "Sarah Williams",
+      "subject": "bj vfh",
+      "description": "vhcbvnmntrfghbjknm,",
+      "createdBy": "u1",
+      "createdByName": "Alice Admin",
       "assignedAgent": null,
       "assignedAgentName": null,
-      "category": "Security",
-      "priority": "High",
+      "category": "Email",
+      "priority": "Low",
       "status": "Open",
       "contactMethod": "Email",
-      "createdDate": "2026-09-06T16:20:00.000Z",
-      "updatedDate": "2026-09-06T16:20:00.000Z",
+      "createdDate": "2026-09-15T05:50:17.259Z",
+      "updatedDate": "2026-09-15T05:50:17.259Z",
       "dueDate": null,
       "resolution": null,
       "resolutionNotes": null,
       "resolutionDate": null,
       "activity": [
         {
-          "timestamp": "2026-09-06T16:20:00.000Z",
-          "message": "Ticket created by Sarah Williams"
+          "timestamp": "2026-09-15T05:50:17.259Z",
+          "message": "Ticket created by Alice Admin"
         }
       ]
     },
     {
-      "id": "TKT-1007",
-      "subject": "Password reset for email account",
-      "description": "I forgot my email password and the self-service reset link is not working for me.",
+      "id": "TKT-1005",
+      "subject": "uyifnh",
+      "description": "ghi dhfgidhiodfhosuuuuufffffffffff",
       "createdBy": "u4",
       "createdByName": "John Employee",
-      "assignedAgent": "u2",
-      "assignedAgentName": "Raj Kumar",
-      "category": "Email",
+      "assignedAgent": null,
+      "assignedAgentName": null,
+      "category": "Access Request",
       "priority": "Medium",
-      "status": "Resolved",
-      "contactMethod": "Chat",
-      "createdDate": "2026-08-28T09:00:00.000Z",
-      "updatedDate": "2026-08-28T10:00:00.000Z",
-      "dueDate": "2026-08-29T18:00:00.000Z",
-      "resolution": "Password was manually reset by IT and temporary credentials were sent securely.",
-      "resolutionNotes": "User was advised to change the password immediately after first login.",
-      "resolutionDate": "2026-08-28T10:00:00.000Z",
+      "status": "Open",
+      "contactMethod": "Email",
+      "createdDate": "2026-09-15T06:20:07.448Z",
+      "updatedDate": "2026-09-15T06:20:07.448Z",
+      "dueDate": null,
+      "resolution": null,
+      "resolutionNotes": null,
+      "resolutionDate": null,
       "activity": [
         {
-          "timestamp": "2026-08-28T09:00:00.000Z",
+          "timestamp": "2026-09-15T06:20:07.448Z",
           "message": "Ticket created by John Employee"
-        },
-        {
-          "timestamp": "2026-08-28T09:15:00.000Z",
-          "message": "Ticket assigned to Raj Kumar by Alice Admin"
-        },
-        {
-          "timestamp": "2026-08-28T09:45:00.000Z",
-          "message": "Status changed to In Progress by Raj Kumar"
-        },
-        {
-          "timestamp": "2026-08-28T10:00:00.000Z",
-          "message": "Resolution added and ticket resolved by Raj Kumar"
         }
       ]
     }

@@ -5,9 +5,9 @@ import { isValidEmail } from '../../utils/helpers';
 import Logo from '../../components/common/Logo';
 
 const demoAccounts = [
-  { role: 'Admin', email: 'admin@deskflow.io', password: 'Admin@123' },
-  { role: 'Support Agent', email: 'agent1@deskflow.io', password: 'Agent@123' },
-  { role: 'Employee', email: 'employee@deskflow.io', password: 'Employee@123' },
+  { role: 'Admin', email: 'admin@itsm.com', password: 'admin123' },
+  { role: 'Support Agent', email: 'agent1@itsm.com', password: 'agent123' },
+  { role: 'Employee', email: 'employee1@itsm.com', password: 'employee123' },
 ];
 
 const Login = () => {

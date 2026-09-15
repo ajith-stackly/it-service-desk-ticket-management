@@ -22,6 +22,9 @@ const allowedOrigins = [
   "https://it-service-desk1-llj6.vercel.app",
   "https://it-service-desk1-1kya.vercel.app",
   "https://it-service-desk1-bzsf.vercel.app",
+
+  // Add any new Vercel URL here, e.g.:
+  // "https://your-new-deployment.vercel.app",
 ];
 
 app.use(
@@ -78,6 +81,23 @@ function saveDB(db) {
     console.error("Database write error:", error);
     throw error;
   }
+}
+
+// Filters an array of records against req.query, e.g. GET /users?email=a@b.com
+// Comparison is case-insensitive and trims whitespace so "Email" vs "email"
+// casing differences (and stray spaces) never break a lookup.
+function applyQueryFilters(records, query) {
+  const filterKeys = Object.keys(query || {});
+  if (filterKeys.length === 0) return records;
+
+  return records.filter((record) =>
+    filterKeys.every((key) => {
+      if (!(key in record)) return false;
+      const recordValue = String(record[key]).trim().toLowerCase();
+      const queryValue = String(query[key]).trim().toLowerCase();
+      return recordValue === queryValue;
+    })
+  );
 }
 
 /* =========================
@@ -254,7 +274,7 @@ app.get("/api/:resource", (req, res) => {
       });
     }
 
-    return res.json(db[resource]);
+    return res.json(applyQueryFilters(db[resource], req.query));
   } catch (error) {
     console.error("GET error:", error);
 
@@ -286,7 +306,7 @@ app.get("/:resource", (req, res) => {
       });
     }
 
-    return res.json(db[resource]);
+    return res.json(applyQueryFilters(db[resource], req.query));
   } catch (error) {
     console.error("GET error:", error);
 
